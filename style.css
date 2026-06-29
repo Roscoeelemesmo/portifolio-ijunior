@@ -1,39 +1,138 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+/* Paleta de Cores e Configurações Gerais */
+:root {
+    --cor-fundo: #f4f7f6;
+    --cor-texto: #333333;
+    --cor-primaria: #4f7fe6;
+    --cor-secundaria: #9bbafe;
+    --cor-branco: #ffffff;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
 }
 
 .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Cabeçalho e Hero (FLEXBOX) --- */
+.cabecalho {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    color: var(--cor-branco);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--cor-branco);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.hero-texto h1 {
+    font-size: 2.5rem;
+}
+
+.hero-texto span {
+    color: #ffeaa7; /* Detalhe amarelo no título */
+}
+
+/* --- Seções Gerais --- */
 section {
-    background: white;
+    background-color: var(--cor-branco);
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+section h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--cor-fundo);
+    padding-bottom: 10px;
+}
+
+/* --- Projetos (GRID) --- */
+.grid-projetos {
+    display: grid;
+    /* Grid inteligente: se adapta ao tamanho da tela sozinho */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--cor-fundo);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 5px solid var(--cor-primaria);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efeito ao passar o mouse */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* --- Contato (FLEXBOX) --- */
+.flex-contato {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-contato {
+    text-decoration: none;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-contato:hover {
+    background-color: #5b4bc4;
+}
+
+/* --- Rodapé --- */
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 20px;
+    color: #777;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
